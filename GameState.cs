@@ -20,6 +20,7 @@ public partial class GameState : Node
 	public void SetHealth(int newHealth)
 	{
 		_health = newHealth;
+		EmitSignal(SignalName.HealthChanged, _health);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,5 +28,7 @@ public partial class GameState : Node
 	{
 	}
 
+	[Signal]
+	public delegate void HealthChangedEventHandler(int newHealth);
 
 }
