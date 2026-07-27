@@ -6,17 +6,17 @@
 script = ExtResource("1_kqpgu")
 
 [node name="Label" type="Label" parent="." unique_id=1706230672]
-offset_left = 244.0
-offset_top = 170.0
-offset_right = 339.0
-offset_bottom = 193.0
+offset_left = 230.0
+offset_top = 104.0
+offset_right = 325.0
+offset_bottom = 127.0
 text = "Hello World!"
 
 [node name="Button" type="Button" parent="." unique_id=1956190568]
-offset_left = 255.0
-offset_top = 205.0
-offset_right = 332.0
-offset_bottom = 236.0
+offset_left = 85.0
+offset_top = 100.0
+offset_right = 162.0
+offset_bottom = 131.0
 text = "Click Me!"
 
 [connection signal="pressed" from="Button" to="." method="OnButtonPressed"]
