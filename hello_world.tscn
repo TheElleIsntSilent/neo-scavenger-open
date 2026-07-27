@@ -10,13 +10,21 @@ offset_left = 230.0
 offset_top = 104.0
 offset_right = 325.0
 offset_bottom = 127.0
-text = "Hello World!"
+text = "Text"
 
-[node name="Button" type="Button" parent="." unique_id=1956190568]
+[node name="ButtonPlus" type="Button" parent="." unique_id=1956190568]
 offset_left = 85.0
 offset_top = 100.0
 offset_right = 162.0
 offset_bottom = 131.0
-text = "Click Me!"
+text = "Health +"
 
-[connection signal="pressed" from="Button" to="." method="OnButtonPressed"]
+[node name="ButtonMinus" type="Button" parent="." unique_id=1530107282]
+offset_left = 86.0
+offset_top = 162.0
+offset_right = 163.0
+offset_bottom = 193.0
+text = "Health -"
+
+[connection signal="pressed" from="ButtonPlus" to="." method="OnButtonPress_Plus"]
+[connection signal="pressed" from="ButtonMinus" to="." method="OnButtonPress_Minus"]
