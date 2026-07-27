@@ -1,0 +1,11 @@
+# Normalize EOL for all files that Git considers text files.
+* text=auto eol=lf
+*.cs text eol=lf
+*.tscn text eol=lf
+*.tres text eol=lf
+*.godot text eol=lf
+*.gitignore text eol=lf
+*.png binary
+*.jpg binary
+*.wav binary
+*.ogg binary
