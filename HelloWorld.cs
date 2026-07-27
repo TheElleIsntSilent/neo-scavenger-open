@@ -3,15 +3,14 @@ using System;
 
 public partial class HelloWorld : Node2D
 {
-	private Label _label;
 	private GameState _gameState;
+	private VBoxContainer _vBoxContainer;
 	
-
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		_gameState = GetNode<GameState>("/root/GameState");
-		_label = GetNode<Label>("Label");
+		_vBoxContainer = GetNode<VBoxContainer>("VBoxContainer");
 
 		_gameState.HealthChanged += OnHealthChanged;
 	}
@@ -30,7 +29,9 @@ public partial class HelloWorld : Node2D
 
 	private void OnHealthChanged(int newHealth)
 	{
-		_label.Text = $"Health: {newHealth}";
+		Label label = new Label();
+		_vBoxContainer.AddChild(label);
+		label.Text = $"Health: {newHealth}";
 	}	
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
