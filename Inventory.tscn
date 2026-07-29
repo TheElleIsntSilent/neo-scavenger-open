@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://c3u3dkos1qtdm"]
 
-[ext_resource type="Script" uid="uid://fg7dmmeixmkl" path="res://InventoryGrid.cs" id="1_3n7vm"]
 [ext_resource type="Script" uid="uid://bc5j18q7su6c6" path="res://Inventory.cs" id="1_3xuxb"]
 [ext_resource type="Texture2D" uid="uid://biypco100k8kw" path="res://img/GUICell.png" id="1_ki15f"]
 [ext_resource type="Theme" uid="uid://bsmxmlvx2ub0a" path="res://default_theme.tres" id="1_nwt7c"]
-[ext_resource type="Script" uid="uid://dhapnvsorlwa1" path="res://InventorySlot.cs" id="4_arhjh"]
 
 [node name="Inventory" type="Control" unique_id=1599559947]
 layout_mode = 3
@@ -16,21 +14,27 @@ grow_vertical = 2
 script = ExtResource("1_3xuxb")
 
 [node name="InventorySlot" type="Button" parent="." unique_id=1595283988]
-visible = false
 layout_mode = 0
 offset_right = 10.0
 offset_bottom = 10.0
 theme = ExtResource("1_nwt7c")
 icon = ExtResource("1_ki15f")
 vertical_icon_alignment = 0
-script = ExtResource("4_arhjh")
 
 [node name="InventoryGrid" type="GridContainer" parent="." unique_id=1675712245]
-visible = false
 layout_mode = 0
 offset_right = 28.0
 offset_bottom = 10.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 3
-script = ExtResource("1_3n7vm")
+
+[node name="Button" type="Button" parent="." unique_id=1165403004]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 6.0
+offset_right = 159.0
+offset_bottom = 46.0
+text = "Action"
+
+[connection signal="pressed" from="Button" to="." method="OnButtonPress"]
