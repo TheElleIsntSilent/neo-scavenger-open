@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bvli33rxc18lm"]
+
+[ext_resource type="Script" uid="uid://ypknr1purv8d" path="res://MainTest.cs" id="1_54b8x"]
+[ext_resource type="Texture2D" uid="uid://biypco100k8kw" path="res://img/GUICell.png" id="2_mijvv"]
+
+[node name="MainTest" type="Node2D" unique_id=452787644]
+script = ExtResource("1_54b8x")
+
+[node name="Button" type="Button" parent="." unique_id=1267931600]
+offset_left = 138.0
+offset_top = 107.0
+offset_right = 178.0
+offset_bottom = 147.0
+icon = ExtResource("2_mijvv")

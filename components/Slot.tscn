@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dkgt64hu5sdbo"]
+
+[ext_resource type="Theme" uid="uid://bsmxmlvx2ub0a" path="res://components/default_theme.tres" id="1_y657u"]
+[ext_resource type="Texture2D" uid="uid://biypco100k8kw" path="res://img/GUICell.png" id="2_bt0a4"]
+
+[node name="Slot" type="Button" unique_id=1824932750]
+offset_right = 10.0
+offset_bottom = 10.0
+theme = ExtResource("1_y657u")
+icon = ExtResource("2_bt0a4")
+vertical_icon_alignment = 0

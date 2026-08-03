@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bse65yr30gxkb"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_ypfna"]
+script/source = "using Godot;
+using System;
+
+public partial class HelloWorld : Node2D
+{
+	private GameState _gameState;
+	private VBoxContainer _vBoxContainer;
+	
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		_gameState = GetNode<GameState>(\"/root/GameState\");
+		_vBoxContainer = GetNode<VBoxContainer>(\"VBoxContainer\");
+
+		_gameState.HealthChanged += OnHealthChanged;
+	}
+
+	private void OnButtonPress_Plus()
+	{
+		int health = _gameState.GetHealth() + 10;
+		_gameState.SetHealth(health);
+	}
+
+	private void OnButtonPress_Minus()
+	{
+		int health = _gameState.GetHealth() - 10;
+		_gameState.SetHealth(health);
+	}
+
+	private void OnHealthChanged(int newHealth)
+	{
+		Label label = new Label();
+		_vBoxContainer.AddChild(label);
+		label.Text = $\"Health: {newHealth}\";
+	}	
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
+[node name="Hello World" type="Node2D" unique_id=758014057]
+script = SubResource("CSharpScript_ypfna")
+metadata/_edit_horizontal_guides_ = [-90.0]
+
+[node name="ButtonPlus" type="Button" parent="." unique_id=1956190568]
+offset_left = 28.0
+offset_top = 72.0
+offset_right = 105.0
+offset_bottom = 103.0
+text = "Health +"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=533387368]
+offset_left = 158.0
+offset_top = 35.0
+offset_right = 337.0
+offset_bottom = 220.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonMinus" type="Button" parent="." unique_id=1530107282]
+offset_left = 29.0
+offset_top = 134.0
+offset_right = 106.0
+offset_bottom = 165.0
+text = "Health -"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ButtonPlus" to="." method="OnButtonPress_Plus"]
+[connection signal="pressed" from="ButtonMinus" to="." method="OnButtonPress_Minus"]
