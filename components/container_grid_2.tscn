@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://dgb42fbbijo0a"]
-
-[ext_resource type="Texture2D" uid="uid://biypco100k8kw" path="res://img/GUICell.png" id="1_pc4xv"]
-
-[node name="ContainerGrid2" type="Button" unique_id=1143202047]
-custom_minimum_size = Vector2(10, 10)
-button_mask = 3
-icon = ExtResource("1_pc4xv")
