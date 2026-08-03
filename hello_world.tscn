@@ -1,9 +1,51 @@
 [gd_scene format=3 uid="uid://bse65yr30gxkb"]
 
-[ext_resource type="Script" uid="uid://b1n35r6qbim0d" path="res://HelloWorld.cs" id="1_kqpgu"]
+[sub_resource type="CSharpScript" id="CSharpScript_ypfna"]
+script/source = "using Godot;
+using System;
+
+public partial class HelloWorld : Node2D
+{
+	private GameState _gameState;
+	private VBoxContainer _vBoxContainer;
+	
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		_gameState = GetNode<GameState>(\"/root/GameState\");
+		_vBoxContainer = GetNode<VBoxContainer>(\"VBoxContainer\");
+
+		_gameState.HealthChanged += OnHealthChanged;
+	}
+
+	private void OnButtonPress_Plus()
+	{
+		int health = _gameState.GetHealth() + 10;
+		_gameState.SetHealth(health);
+	}
+
+	private void OnButtonPress_Minus()
+	{
+		int health = _gameState.GetHealth() - 10;
+		_gameState.SetHealth(health);
+	}
+
+	private void OnHealthChanged(int newHealth)
+	{
+		Label label = new Label();
+		_vBoxContainer.AddChild(label);
+		label.Text = $\"Health: {newHealth}\";
+	}	
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
 
 [node name="Hello World" type="Node2D" unique_id=758014057]
-script = ExtResource("1_kqpgu")
+script = SubResource("CSharpScript_ypfna")
 metadata/_edit_horizontal_guides_ = [-90.0]
 
 [node name="ButtonPlus" type="Button" parent="." unique_id=1956190568]

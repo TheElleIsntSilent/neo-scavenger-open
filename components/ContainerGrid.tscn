@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c83m0jkks7sdr"]
+
+[node name="ContainerGrid" type="GridContainer" unique_id=895737272]
+offset_right = 28.0
+offset_bottom = 10.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
