@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NeoScavOpen")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+943404027b6ebf7c870ddaeda8e96ebf490f5f48")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+662b87a515628c9092255c71bb821961ab8dcdc3")]
 [assembly: System.Reflection.AssemblyProductAttribute("NeoScavOpen")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NeoScavOpen")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
